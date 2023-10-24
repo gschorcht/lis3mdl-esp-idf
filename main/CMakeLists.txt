@@ -1,0 +1,2 @@
+idf_component_register(SRCS "lis3mdl.c"
+                    INCLUDE_DIRS "")
