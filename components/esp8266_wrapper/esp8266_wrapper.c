@@ -69,6 +69,7 @@ void gpio_enable (gpio_num_t gpio, const gpio_mode_t mode)
 void i2c_init (int bus, gpio_num_t scl, gpio_num_t sda, uint32_t freq)
 {
     i2c_config_t conf;
+    memset(&conf, 0, sizeof(conf));
     conf.mode = I2C_MODE_MASTER;
     conf.sda_io_num = sda;
     conf.scl_io_num = scl;
