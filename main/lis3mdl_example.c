@@ -33,8 +33,8 @@
 /* -- use following constants to define the example mode ----------- */
 
 // #define SPI_USED     // if defined SPI is used, otherwise I2C
-#define INT_DATA     // data ready interrupt used
-#define INT_THRESH   // threshold interrupt used
+// #define INT_DATA     // data ready interrupt used
+// #define INT_THRESH   // threshold interrupt used
 
 #if defined(INT_DATA) || defined(INT_THRESH)
 #define INT_USED
@@ -74,13 +74,13 @@
 
 // I2C interface defintions for ESP32 and ESP8266
 #define I2C_BUS       0
-#define I2C_SCL_PIN   22
-#define I2C_SDA_PIN   21
+#define I2C_SCL_PIN   14
+#define I2C_SDA_PIN   13
 #define I2C_FREQ      I2C_FREQ_100K
 
 // interrupt GPIOs defintions for ESP8266 and ESP32
 #define PIN_INT       5
-#define PIN_DRDY      12
+#define PIN_DRDY      4
 
 /* -- user tasks --------------------------------------------------- */
 
@@ -197,8 +197,8 @@ void user_init(void)
     i2c_init (I2C_BUS, I2C_SCL_PIN, I2C_SDA_PIN, I2C_FREQ);
     
     // init the sensor with slave address LIS3MDL_I2C_ADDRESS_2 connected to I2C_BUS.
-    sensor = lis3mdl_init_sensor (I2C_BUS, LIS3MDL_I2C_ADDRESS_1, 0);
-
+    sensor = lis3mdl_init_sensor (I2C_BUS, LIS3MDL_I2C_ADDRESS_2, 0);
+    
     #endif
     
     if (sensor)
