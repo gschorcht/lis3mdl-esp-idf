@@ -198,7 +198,7 @@ void user_init(void)
     
     // init the sensor with slave address LIS3MDL_I2C_ADDRESS_2 connected to I2C_BUS.
     sensor = lis3mdl_init_sensor (I2C_BUS, LIS3MDL_I2C_ADDRESS_2, 0);
-
+    
     #endif
     
     if (sensor)
